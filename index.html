@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>Make it 15!</title>
+	<script src="js/board.js"></script>
+	<script src="js/popup.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/board.css">
+	<link rel="stylesheet" type="text/css" href="css/popup.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	   <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch" rel="stylesheet">
+
+</head>
+
+<body >
+<div style="display: none;" id="start_popupOverlay">
+	<div id="start_popupBox">
+		<div> 
+			<div id="start_popupBoxHead"></div>
+			<div id="start_popupBoxBody"></div>
+			<div id="start_popupBoxFooter"></div>
+		</div>
+	</div>
+</div><!--end start_popupOverlay -->
+
+<div style="display: none;" id="popupOverlay">
+	<div id="popupBox">
+		<div> 
+			<div id="popupBoxHead"></div>
+			<div id="popupBoxBody"></div>
+			<div id="popupBoxFooter"></div>
+		</div>
+	</div>
+</div><!--end popupOverlay -->
+
+	<div id="container">
+		<form name="boardForm"  >
+		<h1 id="gameTitle"></h1>
+			<div id="boardBox">
+				<button type="submit" id="b1" onclick="return playGame(this.id)"></button>
+				<button type="submit" id="b2" onclick="return playGame(this.id)"></button>
+				<button type="submit" id="b3" onclick="return playGame(this.id)"></button>
+				<button type="submit" id="b4" onclick="return playGame(this.id)"></button>
+				<button type="submit" id="b5" onclick="return playGame(this.id)"></button>
+				<button type="submit" id="b6" onclick="return playGame(this.id)"></button>
+				<button type="submit" id="b7" onclick="return playGame(this.id)"></button>
+				<button type="submit" id="b8" onclick="return playGame(this.id)"></button>
+				<button type="submit" id="b9" onclick="return playGame(this.id)"></button>
+			</div>
+			<div id="radioButtonPanel">
+				<div class="radioCol">
+					<input type="radio" name="radioNum" id="r1" value="1">
+					<label>1</label>
+				</div>
+				<div class="radioCol">
+					<input type="radio" name="radioNum" id="r2" value="2">
+					<label>2</label>
+				</div>
+				<div class="radioCol">
+					<input type="radio" name="radioNum" id="r3" value="3">
+					<label>3</label>
+				</div>
+				<div class="radioCol">
+					<input type="radio" name="radioNum" id="r4" value="4">
+					<label>4</label>
+				</div>
+				<div class="radioCol">
+					<input type="radio" name="radioNum" id="r5" value="5">
+					<label>5</label>
+				</div>
+				<div class="radioCol">
+					<input type="radio" name="radioNum" id="r6" value="6">
+					<label>6</label>
+				</div>
+				<div class="radioCol">
+					<input type="radio" name="radioNum" id="r7" value="7">
+					<label>7</label>
+				</div>
+				<div class="radioCol">
+					<input type="radio" name="radioNum" id="r8" value="8">
+					<label>8</label>
+				</div>
+				<div class="radioCol">
+					<input type="radio" name="radioNum" id="r9" value="9">
+					<label>9</label>
+				</div></div>
+			<div id ='reset'>
+				<button type="reset" id="resetButton" onclick="resetAll()"> > reset</button>
+			</div>
+
+		</form>	
+	</div><!--<div id="container">-->
+</body>
+</html>

@@ -1,0 +1,194 @@
+html{
+	height: 100%;
+
+}
+
+form{
+	margin-top: 5em;
+}
+
+body {
+	background-image : url("../img/background4.jpg")  ;
+	background-size: 100% 100%;
+	background-repeat:no-repeat;
+	background-position: center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	font-family: 'Cabin Sketch', cursive;
+
+}
+
+/* the whole board dimension*/
+#boardBox {
+	
+	width:300px;
+	height:300px;
+	margin:  50px auto ;
+	font-size: 8.5px; 
+}
+
+#container h1{
+	text-align: center; 
+}
+
+
+/* board game cell */
+button{
+	font-family: 'Cabin Sketch', cursive;
+	font-size: 15px; 
+	width:100px;
+	height: 100px;
+	font-size: 10px;
+	float: left;
+	text-align: center; 
+	background-color: Transparent;
+	border-radius: 50%;/* circle background */
+
+
+	border-style: solid;
+	border-width: 0px;
+	-moz-border-image: url(../img/border_circle2.png) 0 0 27 stretch;
+	-webkit-border-image: url(../img/border_circle2.png) 0 0 27 stretch;
+	-o-border-image: url(../img/border_circle2.png) 0 0 27 stretch;
+	border-image: url(../img/border_circle2.png) 0 0 27 fill stretch;
+}
+
+button[disabled=disabled], button:disabled {
+	background-color: black;
+}
+
+
+#radioButtonPanel ,#reset{
+	width:300px;
+	height:50px;
+	margin:  5px auto ;
+	font-size: 8.5px; 
+	display: -webkit-flex;
+	display: flex;
+	-webkit-align-items: center;
+	align-items: center;
+
+}
+.radioCol{
+	background-color: Transparent;
+	background-repeat:no-repeat;
+	text-align: center;
+	border: none;
+}
+
+
+
+
+.col{
+	width:98px;
+	height: 98px;
+	border-color: #888888 ; 	
+	border-style: solid;
+	border-width: 1px;   
+	float: left;
+
+	text-align: center; 
+}
+
+
+
+
+.comp{
+	font-size: 50px;
+	color:#0040ff;
+	text-align: center; 	
+}
+
+.user{
+	font-size: 50px;
+	color:#ff0000;
+	text-align: center; 
+}
+
+.invisible{
+	visibility:hidden;
+}
+
+
+
+.ra_col{
+	background-color: green;
+	width:300px;
+	text-align: center; 
+	font-size: 10px; 
+	letter-spacing:15px;
+	margin:  5px auto ;
+}
+
+input[type="radio"]{
+	margin: 0 11.3px 0 10px;
+}
+
+
+.radioBut{
+	background-color: green;
+	width:300px;
+	text-align: center; 
+	font-size: 20px; 
+	letter-spacing:15px;
+
+	margin:  5px auto ;
+}
+
+label {
+	width:10px;
+	text-align: center;
+	padding: 3px;
+	display: inline-block;
+	font-size: 20px; 
+
+}
+
+
+
+#finalMSG{
+	text-align: center; 
+	font-size: 20px;
+}
+
+
+
+button#resetButton{
+	font-family: 'Cabin Sketch', cursive;
+	width:100px;
+	height:50px;
+	margin:  50px auto ;
+	color: #fff;
+	background-color: Transparent;
+	background-repeat:no-repeat;
+	border-radius: 5px;
+	font-size: 25px; 
+	transition: background-color 0.2s ease-out,
+	border-color 0.2s ease-out;
+
+	border-style: solid;
+	border-width: 0px;
+	-moz-border-image: url(../img/border_circle1.png) 0 0 27 stretch;
+	-webkit-border-image: url(../img/border_circle1.png) 0 0 27 stretch;
+	-o-border-image: url(../img/border_circle1.png) 0 0 27 stretch;
+	border-image: url(../img/border_circle1.png) 0 0 27 fill stretch;
+
+
+
+}
+
+
+button#resetButton:hover,
+button#resetButton:active{
+	background-color: brown; /* fallback */
+	background-color: rgba(255, 255, 255, 0.4);
+	border-color: brown; /* fallback */
+	border-color: rgba(255, 255, 255, 0.4);
+	transition: background-color 0.3s ease-in,
+	border-color 0.3s ease-in;
+}
+
+
+

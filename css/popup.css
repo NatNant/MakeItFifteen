@@ -1,0 +1,103 @@
+#popupOverlay , #start_popupOverlay{
+	display: none;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	background: #FFF;
+	width: 100%;
+	z-index: 20;
+
+	background-repeat:no-repeat;
+	border-radius: 5px;
+	font-size: 25px; 
+	transition: background-color 0.2s ease-out,
+	border-color 0.2s ease-out;
+}
+#popupOverlay{
+	opacity: .75;
+}
+#start_popupOverlay{
+	opacity: .9;
+}
+
+
+#popupBox{
+	display: none;
+	margin:50px;
+	border-radius:7px; 
+	z-index: 10;
+}
+#popupBox > div{ background:#FFF; margin:8px; }
+#popupBox > div > #popupBoxHead{ 
+	background: #666; 
+	font-size:19px; 
+	padding:10px; 
+	color:#CCC; 
+	text-align: center; 
+	border-style: solid;
+	border-width: 0px;
+	-moz-border-image: url(../img/border_reg.png) 0 0 27 stretch;
+	-webkit-border-image: url(../img/border_reg.png) 0 0 27 stretch;
+	-o-border-image: url(../img/border_reg.png) 0 0 27 stretch;
+	border-image: url(../img/border_reg.png) 0 0 27 fill stretch;
+}
+#popupBox > div > #popupBoxBody{ background: #333; padding:20px; color:#FFF; }
+#popupBox > div > #popupBoxFooter{ 
+	background: #666; 
+}
+#popupBox > div > #popupBoxFooter > button{ 
+	width: 100px;
+	height: 25px;
+	margin: 10px auto;
+	font-size: 15px; 
+	border-style: solid;
+	border-width: 0px;
+	-moz-border-image: url(../img/border_reg.png) 0 0 27 stretch;
+	-webkit-border-image: url(../img/border_reg.png) 0 0 27 stretch;
+	-o-border-image: url(../img/border_reg.png) 0 0 27 stretch;
+	border-image: url(../img/border_reg.png) 0 0 27 fill stretch;
+}
+
+/* for a start up display*/
+#start_popupOverlay{
+	display: none;
+	opacity: .9;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	background: #FFF;
+	width: 100%;
+	z-index: 20;
+
+	background-repeat:no-repeat;
+	border-radius: 5px;
+	font-size: 25px; 
+	transition: background-color 0.2s ease-out,
+	border-color 0.2s ease-out;
+
+}
+#start_popupBox{
+	display: none;
+	margin:50px;
+	border-radius:7px; 
+	z-index: 1;
+}
+#start_popupBox > div > #start_popupBoxBody{ 
+	margin: auto;
+	text-align: center; 
+	width: 50%;
+	height: 600px;
+	background-image : url("../img/startUp.png")  ;
+	background-size: 100% 100%;
+	background-repeat:no-repeat;
+	background-position: center fixed;
+	-webkit-background-size: contain;
+	-moz-background-size: contain;
+	-o-background-size: contain;
+}
+#start_popupBox > div > #start_popupBoxHead > button{ 
+	width: 50px;
+	height: 50px;
+	margin: 10px auto;
+	font-size: 15px; 	
+}
