@@ -38,14 +38,12 @@ var isRadioValid = validatRadio(radioGroup);
 			}//end else
 		}
 		else{
-			alert('Please select a value!');
+			alert('Please enter your choice!!!');
+			//Result.render('alert', '<span style="font-weight:bold color:red">Please select a value!</span>');
 			return false;
 		}
 	
 }
-
-
-
 
 function validatRadio(obj){
 	//alert('validatRadio');
@@ -58,9 +56,6 @@ function validatRadio(obj){
 	//alert('validatRadio '+ result);
 	return result	
 }
-
-
-
 
 //This function will be called after findTheWinner function
 function setPlayerToComp(){
@@ -131,7 +126,7 @@ function setValueToCell(cellID, cellValueParam){
 	//mimic the Value UI available choice for comp
 	var position = valueForUse.indexOf(parseInt(cellValue));
 	valueForUse.splice(position,1);
-	console.log('valueForUse '+valueForUse);
+	//console.log('valueForUse '+valueForUse);
 	
 	//Set value on board
 	for(var index in board){
@@ -143,12 +138,12 @@ function setValueToCell(cellID, cellValueParam){
 
 	}//end for
 
-	console.log('board:' + board);	
+	//console.log('board:' + board);	
 
 	//mimic the Cell UI available choices for comp
 	var cellIndex = cellForUse.indexOf(cellID);
 	cellForUse.splice(cellIndex,1);
-	console.log('cellForUse '+cellForUse);
+	//console.log('cellForUse '+cellForUse);
 	count++;
 	//alert ('count' +count);
 	if(count < 3){ 
@@ -218,7 +213,7 @@ function findWinner(thePlayer){
 		endGame(winner);			
 	}
 	else if(count == 9){
-		alert ('Tied!');
+		Result.render('tied','Tied!' );
 		//disableAll();	
 	}
 	else{ changeTurn();}
@@ -237,14 +232,21 @@ function returnTheWinner(aPlayer, cell1,cell2,cell3){
 function endGame(winner) {
 	disableAll();	
 	if(winner === 'user'){
+
 		if (userName == ''){
-			alert('The winner is YOU!' );
+			Result.render('winner','The winner is YOU!');
+			
 		}
-		else{ alert('The winner is '+ userName );}
+		else{ 
+			alert('userName == username');
+			var msg = 'The winner is '+ userName;
+			Result.render('winner',msg);					
+		}
 		
 	}
 	else{
-		alert('The winner is a Computer!!!' );
+		alert('else');
+		Result.render('loser','The winner is a Computer!!!');		
 	}		
 }
 

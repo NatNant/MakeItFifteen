@@ -1,13 +1,15 @@
 var StartUp = new CustomAlert();
 var Prompt = new CustomPrompt();
+var Rule = new DisplayHowto();
+var howToPlayString = '<ul><li>You will play against a computer.</li><li>Your input is <span style="color:red">RED.</span></li><li>Computer input is <span style="color:blue">BLUE.</span></li><li>Who makes the sum of 15 first is the <span style="font-weight:bold">WINNER!!!.</span></li></ul>'
+var Result = new CustomResultPopup();
 
 
 
 document.addEventListener("DOMContentLoaded", theDomHasLoaded, false);
 
 function theDomHasLoaded(e) {
-	StartUp.render('');
-   
+	StartUp.render('');  
 }
  
 
@@ -22,13 +24,40 @@ function CustomAlert(){
 		//start_popupBox.style.left = (winW/2) - (550 * .5)+"px";
 	    start_popupBox.style.top = "100px";
 	    start_popupBox.style.display = "block";
-		document.getElementById('start_popupBoxHead').innerHTML = '<button onclick="StartUp.ok()">Play</button>';
+		document.getElementById('start_popupBoxHead').innerHTML = '<button onclick="StartUp.ok()">Play</button></br><button onclick="StartUp.howto()">How to</button>';
 	    document.getElementById('start_popupBoxBody').innerHTML = 'make it 15';
 		//document.getElementById('start_popupBoxFooter').innerHTML = 
 	}
 	this.ok = function(){
 		document.getElementById('start_popupBox').style.display = "none";
 		document.getElementById('start_popupOverlay').style.display = "none";
+		Prompt.render('Please enter you name:'); // this will call CustomPrompt()
+	}
+	this.howto = function(){
+		document.getElementById('start_popupBox').style.display = "none";
+		document.getElementById('start_popupOverlay').style.display = "none";
+		Rule.render(); // this will call CustomPrompt()
+	}
+}
+
+function DisplayHowto(){
+	this.render = function(){
+		var winW = window.innerWidth;
+	    var winH = window.innerHeight;
+		var dialogoverlay = document.getElementById('howto_popupOverlay');
+	    var howto_popupBox = document.getElementById('howto_popupBox');
+		howto_popupOverlay.style.display = "block";
+	    howto_popupOverlay.style.height = winH+"px";
+		//howto_popupBox.style.left = (winW/2) - (550 * .5)+"px";
+	    howto_popupBox.style.top = "100px";
+	    howto_popupBox.style.display = "block";
+		document.getElementById('howto_popupBoxHead').innerHTML = '<h1>How to Play:</h1>';
+	    document.getElementById('howto_popupBoxBody').innerHTML = howToPlayString;
+		document.getElementById('howto_popupBoxFooter').innerHTML = '<button onclick="Rule.ok()">I got it!</button>';
+	}
+	this.ok = function(){
+		document.getElementById('howto_popupBox').style.display = "none";
+		document.getElementById('howto_popupOverlay').style.display = "none";
 		Prompt.render('Please enter you name:'); // this will call CustomPrompt()
 	}
 }
@@ -60,10 +89,33 @@ function CustomPrompt(){
 	this.ok = function(){
 		document.getElementById('gameTitle').innerHTML = "MAKE IT 15";
 		userName = document.getElementById('userName').value;
-		window['setUserNameFromPopup'](userName);
+		window['setUserNameFromPopup'](userName);//to send avalue to board.js
 		document.getElementById('popupBox').style.display = "none";
 		document.getElementById('popupOverlay').style.display = "none";
 	}
 
+}
+
+
+function CustomResultPopup(){
+	this.render = function(imgName,msg){
+		var winW = window.innerWidth;
+	    var winH = window.innerHeight;
+		var result_popupOverlay = document.getElementById('result_popupOverlay');
+	    var result_popupBox = document.getElementById('result_popupBox');
+		result_popupOverlay.style.display = "block";
+	    result_popupOverlay.style.height = winH+"px";
+		//howto_popupBox.style.left = (winW/2) - (550 * .5)+"px";
+	    result_popupBox.style.top = "100px";
+	    result_popupBox.style.display = "block";
+		document.getElementById('result_popupBoxHead').innerHTML = '<img src="img/'+imgName+'.png" alt="'+imgName+'">'
+	    document.getElementById('result_popupBoxBody').innerHTML = msg;
+		document.getElementById('result_popupBoxFooter').innerHTML = '<button onclick="Result.ok()">ok</button>';
+	}
+	this.ok = function(){
+		document.getElementById('result_popupBox').style.display = "none";
+		document.getElementById('result_popupOverlay').style.display = "none";
+		location.reload();
+	}
 }
 

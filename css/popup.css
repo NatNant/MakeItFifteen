@@ -1,33 +1,51 @@
-#popupOverlay , #start_popupOverlay{
+/*Common inner popup overlay*/
+#popupOverlay , #start_popupOverlay, #howto_popupOverlay ,#result_popupOverlay{
 	display: none;
 	position: fixed;
 	top: 0px;
 	left: 0px;
 	background: #FFF;
 	width: 100%;
-	z-index: 20;
-
+	
 	background-repeat:no-repeat;
 	border-radius: 5px;
 	font-size: 25px; 
 	transition: background-color 0.2s ease-out,
 	border-color 0.2s ease-out;
 }
-#popupOverlay{
-	opacity: .75;
-}
-#start_popupOverlay{
-	opacity: .9;
-}
 
 
-#popupBox{
+
+/*Common inner popup box*/
+#popupBox, #start_popupBox, #howto_popupBox, #result__popupBox{
 	display: none;
 	margin:50px;
-	border-radius:7px; 
-	z-index: 10;
+	z-index: 1;
 }
-#popupBox > div{ background:#FFF; margin:8px; }
+
+/*Common buttons*/
+#start_popupBox > div > #start_popupBoxHead > button,
+#howto_popupBox > div > #howto_popupBoxFooter > button,
+#result_popupBox > div > #result_popupBoxFooter > button,
+#popupBox > div > #popupBoxFooter > button{
+	width: 50px;
+	height: 50px;
+	margin: 10px auto;
+	font-size: 15px; 	
+	font-family: 'Cabin Sketch', cursive;
+	background-color: rgba(0,128,0, .2);
+	-moz-border-image: url(../img/border_circle2.png) 0 0 27 stretch;
+	-webkit-border-image: url(../img/border_circle2.png) 0 0 27 stretch;
+	-o-border-image: url(../img/border_circle2.png) 0 0 27 stretch;
+	border-image: url(../img/border_circle2.png) 0 0 27 fill stretch;
+	border-radius: 50%;/* circle background */
+}
+
+/* for a name prompt only*/
+#popupOverlay{
+	background-color: rgba(100, 100, 100, .75);
+	
+}
 #popupBox > div > #popupBoxHead{ 
 	background: #666; 
 	font-size:19px; 
@@ -43,44 +61,13 @@
 }
 #popupBox > div > #popupBoxBody{ background: #333; padding:20px; color:#FFF; }
 #popupBox > div > #popupBoxFooter{ 
-	background: #666; 
-}
-#popupBox > div > #popupBoxFooter > button{ 
-	width: 100px;
-	height: 25px;
-	margin: 10px auto;
-	font-size: 15px; 
-	border-style: solid;
-	border-width: 0px;
-	-moz-border-image: url(../img/border_reg.png) 0 0 27 stretch;
-	-webkit-border-image: url(../img/border_reg.png) 0 0 27 stretch;
-	-o-border-image: url(../img/border_reg.png) 0 0 27 stretch;
-	border-image: url(../img/border_reg.png) 0 0 27 fill stretch;
+	background-color: transparent;
 }
 
-/* for a start up display*/
+
+/* for a start up display only*/
 #start_popupOverlay{
-	display: none;
-	opacity: .9;
-	position: fixed;
-	top: 0px;
-	left: 0px;
-	background: #FFF;
-	width: 100%;
-	z-index: 20;
-
-	background-repeat:no-repeat;
-	border-radius: 5px;
-	font-size: 25px; 
-	transition: background-color 0.2s ease-out,
-	border-color 0.2s ease-out;
-
-}
-#start_popupBox{
-	display: none;
-	margin:50px;
-	border-radius:7px; 
-	z-index: 1;
+	background-color: rgba(255,255,255, .8);
 }
 #start_popupBox > div > #start_popupBoxBody{ 
 	margin: auto;
@@ -88,16 +75,38 @@
 	width: 50%;
 	height: 600px;
 	background-image : url("../img/startUp.png")  ;
-	background-size: 100% 100%;
+	background-size: 200% 200%;
 	background-repeat:no-repeat;
 	background-position: center fixed;
 	-webkit-background-size: contain;
 	-moz-background-size: contain;
 	-o-background-size: contain;
 }
-#start_popupBox > div > #start_popupBoxHead > button{ 
-	width: 50px;
-	height: 50px;
-	margin: 10px auto;
-	font-size: 15px; 	
+
+
+/* for rule only*/
+#howto_popupOverlay{
+	background-color: rgba(255,255,255, .6);
+
+}
+#howto_popupBox{
+	background-color: rgba(0,128,0, .3);
+	-moz-border-image: url(../img/border_reg.png) 0 0 27 stretch;
+	-webkit-border-image: url(../img/border_reg.png) 0 0 27 stretch;
+	-o-border-image: url(../img/border_reg.png) 0 0 27 stretch;
+	border-image: url(../img/border_reg.png) 0 0 27 fill stretch;
+
+}
+
+/* for a result display only*/
+#result_popupOverlay{
+	background-color: rgba(255,255,255, .8);
+}
+#result_popupBox > div > #result_popupBoxHead, #result_popupBoxBody, #result_popupBoxFooter{ 
+	text-align: center; 
+}
+
+#result_popupBox img {
+    max-width: 100%;
+    max-height: 70%;
 }

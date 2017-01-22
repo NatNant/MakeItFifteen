@@ -3,8 +3,9 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<title>Make it 15!</title>
-	<script src="js/board.js"></script>
+	<!--if you want to access any function in  popup.js in board.js, you need to include popup.js before board.js-->
 	<script src="js/popup.js"></script>
+	<script src="js/board.js"></script>	
 	<link rel="stylesheet" type="text/css" href="css/board.css">
 	<link rel="stylesheet" type="text/css" href="css/popup.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -23,6 +24,15 @@
 		</div>
 	</div>
 </div><!--end start_popupOverlay -->
+<div style="display: none;" id="howto_popupOverlay">
+	<div id="howto_popupBox">
+		<div> 
+			<div id="howto_popupBoxHead"></div>
+			<div id="howto_popupBoxBody"></div>
+			<div id="howto_popupBoxFooter"></div>
+		</div>
+	</div>
+</div><!--end howto_popupOverlay -->
 
 <div style="display: none;" id="popupOverlay">
 	<div id="popupBox">
@@ -33,6 +43,16 @@
 		</div>
 	</div>
 </div><!--end popupOverlay -->
+
+<div style="display: none;" id="result_popupOverlay">
+	<div id="result_popupBox">
+		<div> 
+			<div id="result_popupBoxHead"></div>
+			<div id="result_popupBoxBody"></div>
+			<div id="result_popupBoxFooter"></div>
+		</div>
+	</div>
+</div><!--end result_popupOverlay -->
 
 	<div id="container">
 		<form name="boardForm"  >
