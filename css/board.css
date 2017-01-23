@@ -97,6 +97,15 @@ body {
 	text-align: center; 
 }
 
+#userDashboard{
+	font-size: 15px !important;
+	
+}
+
+#dashboard{
+	background-color: rgba(128,128,128, .5);
+}
+
 .invisible{
 	visibility:hidden;
 }

@@ -22,7 +22,15 @@ var userName ='';
 //to get a user name from popup when window is loaded from popup.js
 function setUserNameFromPopup(popup_userName){
 	userName = popup_userName;
+	var userDashboard = document.getElementById('userDashboard');
+	if(userName != ''){
+		userDashboard.innerHTML = userName+' : RED';
+	}
+	else{
+		userDashboard.innerHTML = 'You : RED';
+	}
 }
+
 
 //Used as the main function
 function playGame(cellID){

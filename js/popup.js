@@ -88,6 +88,7 @@ function CustomPrompt(){
 		document.getElementById('popupBoxHead').innerHTML = "Welcome to Make It 15 Game";
 	    document.getElementById('popupBoxBody').innerHTML = dialog;
 		document.getElementById('popupBoxBody').innerHTML += '<br><input id="userName">';
+		document.getElementById('userName').focus();
 		document.getElementById('popupBoxFooter').innerHTML = '<button onclick="Prompt.ok()">OK</button> <button onclick="Prompt.cancel()">Cancel</button>';
 		//document.getElementById('popupBoxFoot').innerHTML = '<button onclick="Prompt.ok(\''+func+'\')">OK</button> <button onclick="Prompt.cancel()">Cancel</button>';
 	}
