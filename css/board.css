@@ -20,8 +20,7 @@ body {
 }
 
 /* the whole board dimension*/
-#boardBox {
-	
+#boardBox {	
 	width:300px;
 	height:300px;
 	margin:  30px auto ;
@@ -43,7 +42,6 @@ body {
 	text-align: center; 
 	background-color: Transparent;
 	border-radius: 50%;/* circle background */
-
 
 	border-style: solid;
 	border-width: 0px;
@@ -76,9 +74,6 @@ body {
 	border: none;
 }
 
-
-
-
 .col{
 	width:98px;
 	height: 98px;
@@ -89,9 +84,6 @@ body {
 
 	text-align: center; 
 }
-
-
-
 
 .comp{
 	font-size: 50px;
@@ -108,8 +100,6 @@ body {
 .invisible{
 	visibility:hidden;
 }
-
-
 
 .ra_col{
 	background-color: green;
@@ -143,11 +133,6 @@ label {
 	font-size: 20px; 
 
 }
-
-
-
-
-
 
 
 button#resetButton{

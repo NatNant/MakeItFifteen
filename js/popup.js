@@ -1,19 +1,26 @@
-var StartUp = new CustomAlert();
+var StartUp = new StartUpAlert();
 var Prompt = new CustomPrompt();
 var Rule = new DisplayHowto();
 var howToPlayString = '<ul><li>You will play against a computer.</li><li>Your input is <span style="color:red">RED.</span></li><li>Computer input is <span style="color:blue">BLUE.</span></li><li>Who makes the sum of 15 first is the <span style="font-weight:bold">WINNER!!!.</span></li></ul>'
 var Result = new CustomResultPopup();
 
-
-
 document.addEventListener("DOMContentLoaded", theDomHasLoaded, false);
 
 function theDomHasLoaded(e) {
+	playButtonEffect();
 	StartUp.render('');  
+}
+
+//sound effect when clicking a button
+function playButtonEffect(){
+	var buttonEffect = document.getElementById('buttonEffect');
+	buttonEffect.src = 'audio/buttonEffect.mp3';
+	//buttonEffect.volume=0.50;
+	buttonEffect.play();
 }
  
 
-function CustomAlert(){
+function StartUpAlert(){
 	this.render = function(dialog){
 		var winW = window.innerWidth;
 	    var winH = window.innerHeight;
@@ -29,11 +36,13 @@ function CustomAlert(){
 		
 	}
 	this.ok = function(){
+		playButtonEffect();
 		document.getElementById('start_popupBox').style.display = "none";
 		document.getElementById('start_popupOverlay').style.display = "none";
 		Prompt.render('Please enter you name:'); // this will call CustomPrompt()
 	}
 	this.howto = function(){
+		playButtonEffect();
 		document.getElementById('start_popupBox').style.display = "none";
 		document.getElementById('start_popupOverlay').style.display = "none";
 		Rule.render(); // this will call CustomPrompt()
@@ -56,6 +65,7 @@ function DisplayHowto(){
 		document.getElementById('howto_popupBoxFooter').innerHTML = '<button onclick="Rule.ok()">I got it!</button>';
 	}
 	this.ok = function(){
+		playButtonEffect();
 		document.getElementById('howto_popupBox').style.display = "none";
 		document.getElementById('howto_popupOverlay').style.display = "none";
 		Prompt.render('Please enter you name:'); // this will call CustomPrompt()
@@ -82,11 +92,13 @@ function CustomPrompt(){
 		//document.getElementById('popupBoxFoot').innerHTML = '<button onclick="Prompt.ok(\''+func+'\')">OK</button> <button onclick="Prompt.cancel()">Cancel</button>';
 	}
 	this.cancel = function(){
+		playButtonEffect();
 		document.getElementById('gameTitle').innerHTML = "MAKE IT 15";
 		document.getElementById('popupBox').style.display = "none";
 		document.getElementById('popupOverlay').style.display = "none";
 	}
 	this.ok = function(){
+		playButtonEffect();
 		document.getElementById('gameTitle').innerHTML = "MAKE IT 15";
 		userName = document.getElementById('userName').value;
 		window['setUserNameFromPopup'](userName);//to send avalue to board.js
@@ -111,14 +123,29 @@ function CustomResultPopup(){
 	  
 		document.getElementById('result_popupBoxHead').innerHTML = '<img src="img/'+imgName+'.png" alt="'+imgName+'">'
 	    document.getElementById('result_popupBoxBody').innerHTML = msg;
-		document.getElementById('result_popupBoxFooter').innerHTML = '<button onclick="Result.ok(\''+imgName+'\')">ok</button>';
+		document.getElementById('result_popupBoxFooter').innerHTML = '<button onclick="Result.ok()">ok</button>';
+
+		var buttonEffect = document.getElementById('buttonEffect');
+		if(imgName == 'winner'){			
+			buttonEffect.src = 'audio/winner.mp3';
+			
+		}
+		if(imgName == 'tie'){			
+			buttonEffect.src = 'audio/tie.mp3';
+		}
+		
+		if(imgName == 'loser'){			
+			buttonEffect.src = 'audio/loser.mp3';
+		}
+		if(imgName == 'alert'){			
+			buttonEffect.src = 'audio/alert.mp3';
+		}
+		buttonEffect.play();
 	}
 	this.ok = function(imgName){
+		playButtonEffect();
 		document.getElementById('result_popupBox').style.display = "none";
 		document.getElementById('result_popupOverlay').style.display = "none";
-		if(imgName != 'alert'){
-			location.reload();
-		}
 	}
 }
 

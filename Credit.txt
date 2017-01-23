@@ -2,6 +2,23 @@ Credits:
 
 Graphic
 	https://pixabay.com
+	- border_circle2
+	- border_reg
+	- border_circle1
+	- startUp.png
+	- winner.png
+	- alert.png
+	- loser
+	- tie.png
+
+
 Audio  
-	http://www.flashkit.com/soundfx/Interfaces/Bloops/hollow_p-dog-7588/index.php
+	- buttonEffect.mp3 :http://www.flashkit.com/soundfx/Interfaces/Bloops/hollow_p-dog-7588/index.php
+	- winner.mp3 : http://www.flashkit.com/soundfx/Cartoon/Voices/Boobies-Colin_Do-7377/index.php 
+		Author:	Colin Dodd
+	- loser.mp3 http://www.flashkit.com/soundfx/People/Screams/Little_G-Tucker_J-8122/index.php  
+		Author:	Tucker Johnson 
+	- tie.mp3: http://www.flashkit.com/imagesvr_ce/flashkit/soundfx/Cartoon/Falling/Weeeeooo-intermed-774/Weeeeooo-intermed-774_hifi.mp3
+	- alert.mp3 : http://www.flashkit.com/soundfx/Interfaces/Bloops/ooweep-Intermed-602/index.php 
+		Author:	Intermedia Design Graphics
 
