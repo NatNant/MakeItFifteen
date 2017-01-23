@@ -26,7 +26,7 @@ function CustomAlert(){
 	    start_popupBox.style.display = "block";
 		document.getElementById('start_popupBoxHead').innerHTML = '<button onclick="StartUp.ok()">Play</button></br><button onclick="StartUp.howto()">How to</button>';
 	    document.getElementById('start_popupBoxBody').innerHTML = 'make it 15';
-		//document.getElementById('start_popupBoxFooter').innerHTML = 
+		
 	}
 	this.ok = function(){
 		document.getElementById('start_popupBox').style.display = "none";
@@ -108,14 +108,17 @@ function CustomResultPopup(){
 		//howto_popupBox.style.left = (winW/2) - (550 * .5)+"px";
 	    result_popupBox.style.top = "100px";
 	    result_popupBox.style.display = "block";
+	  
 		document.getElementById('result_popupBoxHead').innerHTML = '<img src="img/'+imgName+'.png" alt="'+imgName+'">'
 	    document.getElementById('result_popupBoxBody').innerHTML = msg;
-		document.getElementById('result_popupBoxFooter').innerHTML = '<button onclick="Result.ok()">ok</button>';
+		document.getElementById('result_popupBoxFooter').innerHTML = '<button onclick="Result.ok(\''+imgName+'\')">ok</button>';
 	}
-	this.ok = function(){
+	this.ok = function(imgName){
 		document.getElementById('result_popupBox').style.display = "none";
 		document.getElementById('result_popupOverlay').style.display = "none";
-		location.reload();
+		if(imgName != 'alert'){
+			location.reload();
+		}
 	}
 }
 

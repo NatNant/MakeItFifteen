@@ -38,8 +38,7 @@ var isRadioValid = validatRadio(radioGroup);
 			}//end else
 		}
 		else{
-			alert('Please enter your choice!!!');
-			//Result.render('alert', '<span style="font-weight:bold color:red">Please select a value!</span>');
+			Result.render('alert', '<p><span style="font-weight:bold color:red">Please select a value!</span></p>');
 			return false;
 		}
 	
@@ -115,9 +114,7 @@ function setValueToCell(cellID, cellValueParam){
 	 }
     //Computer's input will fall in this condition
     else{
-    	//alert('Computers input will fall in this condition');
     	cellValue = cellValueParam;
-    	console.log('else cellValue '+ cellValue + ' type '+ cellValue.type);
     	radioGroup[cellValueParam-1].className += "invisible";
     }
 
@@ -138,14 +135,10 @@ function setValueToCell(cellID, cellValueParam){
 
 	}//end for
 
-	//console.log('board:' + board);	
-
 	//mimic the Cell UI available choices for comp
 	var cellIndex = cellForUse.indexOf(cellID);
 	cellForUse.splice(cellIndex,1);
-	//console.log('cellForUse '+cellForUse);
 	count++;
-	//alert ('count' +count);
 	if(count < 3){ 
 		changeTurn();
 	}
@@ -222,7 +215,6 @@ function findWinner(thePlayer){
 function returnTheWinner(aPlayer, cell1,cell2,cell3){
 	if( (cell1.player == aPlayer) && (cell2.player == aPlayer)&& (cell3.player == aPlayer) ){
 		var sum = cell1.value + cell2.value + cell3.value;
-		console.log('sum: ', sum);
 		if( sum == 15){
 			return true;
 		}
@@ -238,14 +230,12 @@ function endGame(winner) {
 			
 		}
 		else{ 
-			alert('userName == username');
 			var msg = 'The winner is '+ userName;
 			Result.render('winner',msg);					
 		}
 		
 	}
 	else{
-		alert('else');
 		Result.render('loser','The winner is a Computer!!!');		
 	}		
 }
