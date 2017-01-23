@@ -14,7 +14,7 @@ function theDomHasLoaded(e) {
 //sound effect when clicking a button
 function playButtonEffect(){
 	var buttonEffect = document.getElementById('buttonEffect');
-	buttonEffect.src = '/audio/buttonEffect.mp3';
+	buttonEffect.src = 'audio/buttonEffect.mp3';
 	//buttonEffect.volume=0.50;
 	buttonEffect.play();
 }
