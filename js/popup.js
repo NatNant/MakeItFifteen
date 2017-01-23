@@ -127,18 +127,18 @@ function CustomResultPopup(){
 
 		var buttonEffect = document.getElementById('buttonEffect');
 		if(imgName == 'winner'){			
-			buttonEffect.src = '/audio/winner.mp3';
+			buttonEffect.src = 'audio/winner.mp3';
 			
 		}
 		if(imgName == 'tie'){			
-			buttonEffect.src = '/audio/tie.mp3';
+			buttonEffect.src = 'audio/tie.mp3';
 		}
 		
 		if(imgName == 'loser'){			
-			buttonEffect.src = '/audio/loser.mp3';
+			buttonEffect.src = 'audio/loser.mp3';
 		}
 		if(imgName == 'alert'){			
-			buttonEffect.src = '/audio/alert.mp3';
+			buttonEffect.src = 'audio/alert.mp3';
 		}
 		buttonEffect.play();
 	}
