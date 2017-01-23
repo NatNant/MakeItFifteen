@@ -6,10 +6,8 @@
 	left: 0px;
 	background: #FFF;
 	width: 100%;
-	
 	background-repeat:no-repeat;
 	border-radius: 5px;
-	font-size: 25px; 
 	transition: background-color 0.2s ease-out,
 	border-color 0.2s ease-out;
 }
@@ -19,7 +17,7 @@
 /*Common inner popup box*/
 #popupBox, #start_popupBox, #howto_popupBox, #result__popupBox{
 	display: none;
-	margin:50px;
+	margin:25px;
 	z-index: 1;
 }
 
@@ -90,13 +88,14 @@
 
 }
 #howto_popupBox{
+	padding-left: 10%;
 	background-color: rgba(0,128,0, .3);
 	-moz-border-image: url(../img/border_reg.png) 0 0 27 stretch;
 	-webkit-border-image: url(../img/border_reg.png) 0 0 27 stretch;
 	-o-border-image: url(../img/border_reg.png) 0 0 27 stretch;
 	border-image: url(../img/border_reg.png) 0 0 27 fill stretch;
-
 }
+
 
 /* for a result display only*/
 #result_popupOverlay{
