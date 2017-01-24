@@ -1,7 +1,7 @@
 var StartUp = new StartUpAlert();
 var Prompt = new CustomPrompt();
 var Rule = new DisplayHowto();
-var howToPlayString = '<ul><li>You will play against a computer.</li><li>Your input is <span style="color:red">RED.</span></li><li>Computer input is <span style="color:blue">BLUE.</span></li><li>Who makes the sum of 15 first is the <span style="font-weight:bold">WINNER!!!.</span></li></ul>'
+var howToPlayString = '<ul><li>You will play against a computer.</li><li>Select a value from radio buttons and tab on a cell on the board to place a value</il><li>Computer will pick a number and a cell after your selection from the left over numbers and cells. So, the board will display 2 number  at the same time.</li><li>Your input is <span style="color:red">RED.</span></li><li>Computer input is <span style="color:blue">BLUE.</span></li><li>Who makes the sum of 15 first is the <span style="font-weight:bold">WINNER!!!.</span></li></ul>'
 var Result = new CustomResultPopup();
 
 document.addEventListener("DOMContentLoaded", theDomHasLoaded, false);
